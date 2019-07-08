@@ -6,6 +6,8 @@
 body {
     background-image: url(../images/background.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 
 .ak-proj-container {
@@ -15,7 +17,6 @@ body {
 .ak-proj-mouth {
     display: flex;
     align-items: center;
-    align-content: center;
     flex-direction: column;
 }
 
@@ -26,6 +27,9 @@ body {
 .ak-proj-choose-lips {
     background-color: #f8f8ff;
     margin-top: 20px;
+}
+
+.lip-choice {
     display: flex;
     align-items: center;
 }
@@ -44,50 +48,52 @@ body {
     font-size: 40px;
 }
 
-.owl-nav button {
-    position: absolute;
-    top: 50%;
-    background-color: #000;
-    color: #fff;
-    margin: 0;
-    transition: all 0.3s ease-in-out;
+.MultiCarousel {
+    float: left;
+    overflow: hidden;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    border-bottom: 6px solid #000000;
+    border-top: 6px solid #000000;
 }
-.owl-nav button.owl-prev {
+
+.MultiCarousel .MultiCarousel-inner {
+    transition: 1s ease all;
+    float: left;
+    width: 920px;
+}
+
+.MultiCarousel .MultiCarousel-inner .item {
+    float: left;
+    width: 230px;
+}
+
+.item:active {
+    border: 5px solid #000000;
+}
+
+.MultiCarousel .MultiCarousel-inner .item > div {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.MultiCarousel .leftLst, .MultiCarousel .rightLst {
+    position: absolute;
+    border-radius: 50%;
+    top: calc(50% - 20px);
+}
+
+.MultiCarousel .leftLst {
     left: 0;
 }
-.owl-nav button.owl-next {
+
+.MultiCarousel .rightLst {
     right: 0;
 }
 
-.owl-dots {
-    text-align: center;
-    padding-top: 15px;
-}
-.owl-dots button.owl-dot {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    display: inline-block;
-    background: #ccc;
-    margin: 0 3px;
-}
-.owl-dots button.owl-dot.active {
-    background-color: #000;
-}
-.owl-dots button.owl-dot:focus {
-    outline: none;
-}
-.owl-nav button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.38) !important;
-}
-span {
-    font-size: 70px;
-    position: relative;
-    top: -5px;
-}
-.owl-nav button:focus {
-    outline: none;
+.arrow{
+    width: 60px;
 }
