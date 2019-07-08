@@ -10,8 +10,18 @@ body {
     background-position: center top;
 }
 
+.logo-desk-tab {
+    text-align: center;
+    margin-top: 30px;
+}
+
 .ak-proj-container {
     margin-top: 20px;
+}
+
+.animated {
+    animation-duration: 5s !important;
+    animation-iteration-count: infinite;
 }
 
 .ak-proj-mouth {
@@ -26,7 +36,6 @@ body {
 
 .ak-proj-choose-lips {
     background-color: #f8f8ff;
-    margin-top: 20px;
 }
 
 .lip-choice {
@@ -35,7 +44,7 @@ body {
 }
 
 .img-hand {
-    width: 100%;
+    width: 100px;
 }
 
 .text-choose-lips {
@@ -45,7 +54,7 @@ body {
 .choose-lips {
     font-family: Raleway-Regular;
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 21px;
 }
 
 .MultiCarousel {
@@ -55,45 +64,59 @@ body {
     width: 100%;
     position: relative;
     background-color: #ffffff;
-    border-bottom: 6px solid #000000;
-    border-top: 6px solid #000000;
+    border-bottom: 4px solid #000000;
+    border-top: 4px solid #000000;
 }
 
 .MultiCarousel .MultiCarousel-inner {
     transition: 1s ease all;
     float: left;
-    width: 920px;
+    width: 554px !important;
 }
 
 .MultiCarousel .MultiCarousel-inner .item {
     float: left;
-    width: 230px;
-}
-
-.item:active {
-    border: 5px solid #000000;
+    width: 138px !important;
 }
 
 .MultiCarousel .MultiCarousel-inner .item > div {
     text-align: center;
-    padding: 10px;
-    margin: 10px;
+}
+
+.lip:active {
+    border: 2px solid #000000;
 }
 
 .MultiCarousel .leftLst, .MultiCarousel .rightLst {
     position: absolute;
-    border-radius: 50%;
     top: calc(50% - 20px);
 }
 
 .MultiCarousel .leftLst {
     left: 0;
+    background-color: transparent;
+    border: none;
 }
 
 .MultiCarousel .rightLst {
     right: 0;
+    background-color: transparent;
+    border: none;
 }
 
-.arrow{
-    width: 60px;
+.arrow {
+    width: 20px;
+}
+
+.adk-proj-btn{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-action{
+    background-color: #ffffff;
+    width: 205px;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 20px;
 }
