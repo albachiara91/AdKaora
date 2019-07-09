@@ -41,23 +41,11 @@ $(document).ready(function () {
             itemsSplit = btnParentSb.split(',');
             $(this).parent().attr("id", "MultiCarousel" + id);
 
-
-            if (bodyWidth >= 1200) {
-                incno = itemsSplit[3];
-                itemWidth = sampwidth / incno;
-            }
-            else if (bodyWidth >= 992) {
-                incno = itemsSplit[2];
-                itemWidth = sampwidth / incno;
-            }
-            else if (bodyWidth >= 768) {
+            if (bodyWidth <= 768) {
                 incno = itemsSplit[1];
                 itemWidth = sampwidth / incno;
             }
-            else {
-                incno = itemsSplit[0];
-                itemWidth = sampwidth / incno;
-            }
+
             $(this).css({'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers});
             $(this).find(itemClass).each(function () {
                 $(this).outerWidth(itemWidth);
@@ -107,4 +95,10 @@ $(document).ready(function () {
         ResCarousel(ell, Parent, slide);
     }
 
+
+
+    $('#new-color-choise').click(function () {
+        $('.click-lips').removeClass("invisible");
+        $('.adk-proj-btn').remove();
+    });
 });

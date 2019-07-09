@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,6 +21,8 @@
     <script type="text/javascript" src="./js/index.js"></script>
     <script type="text/javascript" src="./js/canvas.js"></script>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
     <title>AdKaora Project</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
     <div class="ak-proj-container hide-on-med-and-up">
 
         <div class="ak-proj-mouth">
-            <img src="./images/logo.png">
+            <img class="logo-adk" src="./images/logo.png">
             <img id="mouth-lips" src="./images/mouth-bn.png">
         </div>
         <div class="ak-proj-choose-lips" id="view-lips">
@@ -57,28 +58,28 @@
                         <div class="item">
                             <div class="pad15">
                                 <a href="#">
-                                    <img class="lip" src="./images/lipsticks/01.png" style="width:90px;">
+                                    <img class="lip" src="./images/lipsticks/01.png" style="width:70px;">
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="pad15">
                                 <a href="#">
-                                    <img class="lip" src="./images/lipsticks/02.png" style="width:90px;">
+                                    <img class="lip" src="./images/lipsticks/02.png" style="width:70px;">
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="pad15">
                                 <a href="#">
-                                    <img class="lip" src="./images/lipsticks/03.png" style="width:90px;">
+                                    <img class="lip" src="./images/lipsticks/03.png" style="width:70px;">
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="pad15">
                                 <a href="#">
-                                    <img class="lip" src="./images/lipsticks/04.png" style="width:90px;">
+                                    <img class="lip" src="./images/lipsticks/04.png" style="width:70px;">
                                 </a>
                             </div>
                         </div>
@@ -93,7 +94,7 @@
         <div class="adk-proj-btn-container">
             <div class="adk-proj-btn">
                 <a class="btn btn-outline-dark btn-action"  title="Facebook share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Condividi su Facebook</a>
-                <a class="btn btn-outline-dark btn-action">Scegli un altro colore</a>
+                <a id="new-color-choise" class="btn btn-outline-dark btn-action">Scegli un altro colore</a>
                 <a class="btn btn-outline-dark btn-action"  title="AdKaora site" target="_blank" href="https://www.adkaora.com">Scopri di più</a>
             </div>
         </div>

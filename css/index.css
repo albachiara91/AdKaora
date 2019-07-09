@@ -4,10 +4,9 @@
 }
 
 body {
-    background-image: url(../images/background.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
+    background: url(../images/background.jpg) no-repeat center top;
+    height: 628px;
 }
 
 .logo-desk-tab {
@@ -28,6 +27,10 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.logo-adk {
+    width: 70%;
 }
 
 #mouth-lips {
@@ -54,7 +57,7 @@ body {
 .choose-lips {
     font-family: Raleway-Regular;
     text-transform: uppercase;
-    font-size: 21px;
+    font-size: 16px;
 }
 
 .MultiCarousel {
@@ -76,11 +79,7 @@ body {
 
 .MultiCarousel .MultiCarousel-inner .item {
     float: left;
-    width: 138px !important;
-}
-
-.MultiCarousel .MultiCarousel-inner .item > div {
-    text-align: center;
+    width: 110px !important;
 }
 
 .lip:active {
@@ -108,12 +107,12 @@ body {
     width: 20px;
 }
 
-.adk-proj-btn{
+.adk-proj-btn {
     display: flex;
     flex-direction: column;
 }
 
-.btn-action{
+.btn-action {
     background-color: #ffffff;
     width: 205px;
     text-align: center;
