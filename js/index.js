@@ -3,8 +3,8 @@ var colorsMap = {
     'lip_00': './images/mouth-bn.png',
     'lip_01': './images/mouth_01.png',
     'lip_02': './images/mouth_02.png',
-    'lip_03': './images/mouth_03.png',
-    'lip_04': './images/mouth_04.png',
+    'lip_03': './images/mouth_04.png',
+    'lip_04': './images/mouth_03.png',
 };
 
 function makeBase(id) {
@@ -18,10 +18,10 @@ function makeBase(id) {
     base_image.onload = function(){
         context.drawImage(base_image, 0, 0);
         if (id !== 'lip_00') {
-            $('.click-lips').remove();
+            $('.click-lips').hide();
             $('.adk-proj-btn').removeClass("invisible");
         }
-    }
+    };
     return false;
 }
 
@@ -30,6 +30,11 @@ function onLipChange(id) {
 };
 
 $(document).ready(function () {
+
+    $('.new-color-choise').click(function () {
+        $('.click-lips').show();
+        $('.adk-proj-btn').addClass("invisible");
+    });
 
     function onLipChange(id) {
         makeBase(id);
@@ -136,10 +141,4 @@ $(document).ready(function () {
         var slide = $(Parent).attr("data-slide");
         ResCarousel(ell, Parent, slide);
     }
-
-
-    $('#new-color-choise').click(function () {
-        $('.click-lips').removeClass("invisible");
-        $('.adk-proj-btn').remove();
-    });
 });
