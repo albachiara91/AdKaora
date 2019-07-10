@@ -1,4 +1,3 @@
-
 var colorsMap = {
     'lip_00': './images/mouth-bn.png',
     'lip_01': './images/mouth_01.png',
@@ -7,27 +6,90 @@ var colorsMap = {
     'lip_04': './images/mouth_03.png',
 };
 
+var color, paint;
+var context, canvas;
+
 function makeBase(id) {
-    var imgSrc = colorsMap[id];
-    var canvas = document.getElementById("myCanvas");
-    var context = canvas.getContext('2d');
+    color = $('#' + id).attr("data-color");
+    otherColor(id, true);
+}
+
+function otherColor(id, forceFirstImg) {
+    var imgSrc = colorsMap[(forceFirstImg? "lip_00" : id) ];
+    canvas = document.getElementById("myCanvas");
+    context = canvas.getContext('2d');
     context.clearRect(0, 0, canvas.width, canvas.height);
     var base_image = new Image();
     base_image.src = imgSrc;
     base_image.style.width = '350px';
-    base_image.onload = function(){
+    base_image.onload = function () {
         context.drawImage(base_image, 0, 0);
-        if (id !== 'lip_00') {
+        if (id !== 'lip_00' && !forceFirstImg) {
             $('.click-lips').hide();
             $('.adk-proj-btn').removeClass("invisible");
         }
     };
-    return false;
 }
+
 
 function onLipChange(id) {
     makeBase(id);
+    $('#myCanvas').mousedown(function(e){
+        var mouseX = e.pageX - this.offsetLeft;
+        var mouseY = e.pageY - this.offsetTop;
+
+        paint = true;
+        addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
+        redraw();
+    });
+
+    $('#myCanvas').mousemove(function(e){
+        if(paint){
+            addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+            redraw();
+        }
+    });
+
+    $('#myCanvas').mouseup(function(e){
+        paint = false;
+        otherColor($("*[data-color='"+color+"']").attr("id"));
+    });
+
+    $('#myCanvas').mouseleave(function(e){
+        paint = false;
+    });
+
 };
+
+var clickX = new Array();
+var clickY = new Array();
+var clickDrag =  new Array();
+
+function addClick(x, y, dragging)
+{
+    clickX.push(x);
+    clickY.push(y);
+    clickDrag.push(dragging);
+}
+function redraw(){
+    var canvas = document.getElementById("myCanvas");
+    context.lineJoin = "round";
+    context.lineWidth = 5;
+
+    for(var i=0; i < clickX.length; i++)
+    {
+        context.beginPath();
+        if(clickDrag[i] && i){
+            context.moveTo(clickX[i-1], clickY[i-1]);
+        }else{
+            context.moveTo(clickX[i]-1, clickY[i]);
+        }
+        context.lineTo(clickX[i], clickY[i]);
+        context.closePath();
+        context.strokeStyle = color;
+        context.stroke();
+    }
+}
 
 $(document).ready(function () {
 
@@ -41,11 +103,8 @@ $(document).ready(function () {
     };
 
     window.onload = function () {
-        // context.drawImage(document.getElementById("mouth-lips"), 0,0);
-        makeBase('lip_00');
+        otherColor('lip_00');
     };
-
-
 
     var itemsMainDiv = ('.MultiCarousel');
     var itemsDiv = ('.MultiCarousel-inner');
@@ -71,7 +130,6 @@ $(document).ready(function () {
         ResCarouselSize();
     });
 
-    //this function define the size of the items
     function ResCarouselSize() {
         var incno = 0;
         var dataItems = ("data-items");
@@ -104,8 +162,6 @@ $(document).ready(function () {
         });
     }
 
-
-    //this function used to move the items
     function ResCarousel(e, el, s) {
         var leftBtn = ('.leftLst');
         var rightBtn = ('.rightLst');
@@ -135,7 +191,6 @@ $(document).ready(function () {
         $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
     }
 
-    //It is used to get some elements from btn
     function click(ell, ee) {
         var Parent = "#" + $(ee).parent().attr("id");
         var slide = $(Parent).attr("data-slide");
