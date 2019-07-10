@@ -5,8 +5,7 @@
 
 body {
     background-size: cover;
-    background: url(../images/background.jpg) no-repeat center top;
-    height: 628px;
+    background: url(../images/background.jpg) center top;
 }
 
 .logo-desk-tab {
@@ -34,7 +33,7 @@ body {
 }
 
 #mouth-lips {
-    width: 100%;
+    width: 360px;
 }
 
 .ak-proj-choose-lips {
@@ -74,12 +73,12 @@ body {
 .MultiCarousel .MultiCarousel-inner {
     transition: 1s ease all;
     float: left;
-    width: 554px !important;
+    width: 420px !important;
 }
 
 .MultiCarousel .MultiCarousel-inner .item {
     float: left;
-    width: 110px !important;
+    width: 105px !important;
 }
 
 .lip:active {

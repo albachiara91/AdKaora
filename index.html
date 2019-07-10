@@ -19,7 +19,6 @@
     <link href="./css/index.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script type="text/javascript" src="./js/index.js"></script>
-    <script type="text/javascript" src="./js/canvas.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
@@ -35,10 +34,11 @@
 
     <div class="ak-proj-container hide-on-med-and-up">
 
-        <div class="ak-proj-mouth">
+        <div class="ak-proj-mouth container">
             <img class="logo-adk" src="./images/logo.png">
-            <img id="mouth-lips" src="./images/mouth-bn.png">
+            <canvas id="myCanvas" width="380" height="297"></canvas>
         </div>
+
         <div class="ak-proj-choose-lips" id="view-lips">
             <div class="lip-choice">
                 <div>
@@ -57,29 +57,29 @@
                     <div class="MultiCarousel-inner">
                         <div class="item">
                             <div class="pad15">
-                                <a href="#">
-                                    <img class="lip" src="./images/lipsticks/01.png" style="width:70px;">
+                                <a>
+                                    <img id="lip_01" onclick="onLipChange(this.id)" class="lip" src="./images/lipsticks/01.png" style="width:70px;">
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="pad15">
-                                <a href="#">
-                                    <img class="lip" src="./images/lipsticks/02.png" style="width:70px;">
+                                <a>
+                                    <img id="lip_02" onclick="onLipChange(this.id)" class="lip" src="./images/lipsticks/02.png" style="width:70px;">
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="pad15">
-                                <a href="#">
-                                    <img class="lip" src="./images/lipsticks/03.png" style="width:70px;">
+                                <a>
+                                    <img id="lip_03" onclick="onLipChange(this.id)" class="lip" src="./images/lipsticks/03.png" style="width:70px;">
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="pad15">
-                                <a href="#">
-                                    <img class="lip" src="./images/lipsticks/04.png" style="width:70px;">
+                                <a>
+                                    <img id="lip_04" onclick="onLipChange(this.id)" class="lip" src="./images/lipsticks/04.png" style="width:70px;">
                                 </a>
                             </div>
                         </div>
@@ -92,10 +92,13 @@
         </div>
 
         <div class="adk-proj-btn-container">
-            <div class="adk-proj-btn">
-                <a class="btn btn-outline-dark btn-action"  title="Facebook share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Condividi su Facebook</a>
+            <div class="adk-proj-btn invisible">
+                <a class="btn btn-outline-dark btn-action" title="Facebook share" target="_blank"
+                   href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Condividi
+                    su Facebook</a>
                 <a id="new-color-choise" class="btn btn-outline-dark btn-action">Scegli un altro colore</a>
-                <a class="btn btn-outline-dark btn-action"  title="AdKaora site" target="_blank" href="https://www.adkaora.com">Scopri di più</a>
+                <a class="btn btn-outline-dark btn-action" title="AdKaora site" target="_blank"
+                   href="https://www.adkaora.com">Scopri di più</a>
             </div>
         </div>
     </div>
